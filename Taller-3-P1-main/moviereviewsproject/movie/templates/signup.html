@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h2 class="card-title text-success">¡Gracias por suscribirte!</h2>
+                    {% if email %}
+                        <p class="card-text">Te hemos registrado con el email: <strong>{{ email }}</strong></p>
+                    {% else %}
+                        <p class="card-text">Te hemos registrado en nuestra lista de correo.</p>
+                    {% endif %}
+                    <p class="text-muted">Recibirás las últimas noticias sobre películas directamente en tu bandeja de entrada.</p>
+                    <a href="{% url 'home' %}" class="btn btn-primary">Volver al inicio</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
