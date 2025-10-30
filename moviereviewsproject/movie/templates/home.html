@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="container my-5">
+  <h1 class="text-center mb-4">Página de Samuel Samper Cardona.</h1>
+
+  <!-- Formulario de búsqueda -->
+  <div class="row justify-content-center mb-4">
+    <div class="col-md-6">
+      <form action="" method="GET">
+        <div class="mb-3">
+          <label for="searchMovie" class="form-label">Buscar película</label>
+          <div class="input-group">
+            <input type="text" id="searchMovie" class="form-control" name="searchMovie" placeholder="Search for Movie" />
+            <button type="submit" class="btn btn-primary">Buscar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Mensaje de búsqueda -->
+  {% if searchTerm %}
+    <p class="text-center">Buscando por: <strong>{{ searchTerm }}</strong></p>
+  {% endif %}
+
+  <!-- Resultados de películas -->
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for movie in movies %}
+      <div class="col">
+        <div class="card h-100">
+          <img src="{{ movie.image.url }}" class="card-img-top" alt="{{ movie.title }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ movie.title }}</h5>
+            {% if movie.year %}
+              <p class="text-muted mb-2"><strong>Año:</strong> {{ movie.year }}</p>
+            {% endif %}
+            <p class="card-text">{{ movie.description }}</p>
+            {% if movie.url %}
+              <a href="{{ movie.url }}" class="btn btn-primary">Movie Link</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+<br />
+<br />
+<br />
+<h2>Join our mailing list:</h2>
+<form action="{% url 'signup' %}">
+    <div class="mb-3">
+        <label for="email" class="form-label">Enter your email: </label>
+        <input type="email" class="form-control" name="email" />
+    </div>
+    <button type="submit" class="btn btn-primary">Sign Up</button>
+</form>
+</div>
+
+{% endblock %}

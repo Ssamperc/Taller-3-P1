@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}Acerca de Samuel Samper Cardona{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+  <h1 class="text-center mb-4">Acerca de Samuel Samper Cardona</h1>
+
+  <div class="row justify-content-center">
+    <!-- Columna para la imagen de Samuel -->
+    <div class="col-md-4">
+      <img src="https://via.placeholder.com/300" alt="Samuel Samper" class="img-fluid rounded-circle mb-4">
+    </div>
+
+    <!-- Columna para la descripción -->
+    <div class="col-md-8">
+      <h3 class="mb-3">Hola, soy Samuel Samper Cardona</h3>
+      <p class="lead">
+        Soy un apasionado del desarrollo web y las tecnologías emergentes. He estado trabajando en varios proyectos
+        que buscan ofrecer soluciones innovadoras. Me encanta aprender y mejorar mis habilidades en programación,
+        especialmente en el ámbito del desarrollo web con **Python** y **Django**.
+      </p>
+
+      <h4 class="mb-3">Habilidades</h4>
+      <ul>
+        <li>Desarrollo web con **Django**</li>
+        <li>Frontend con **HTML, CSS, JavaScript**</li>
+        <li>Bases de datos con **SQLite, PostgreSQL**</li>
+        <li>Control de versiones con **Git y GitHub**</li>
+      </ul>
+
+      <h4 class="mb-3">Mis Proyectos</h4>
+      <p>Me he centrado en varios proyectos relacionados con la creación de aplicaciones web interactivas y fáciles de usar.
+        Si deseas ver mi trabajo, revisa mi **repositorio en GitHub** para acceder a mis proyectos más recientes.
+      </p>
+
+      <a href="https://github.com/Ssamperc" target="_blank" class="btn btn-primary">Visita mi GitHub</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
