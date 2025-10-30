@@ -96,9 +96,10 @@ def statistics_view(request):
 
 # ================== SISTEMA DE RECOMENDACIÓN ==================
 # Cargar API Key
-load_dotenv("openAI.env")
-client = OpenAI(api_key=os.environ.get("openai_apikey"))
+load_dotenv("api_keys.env")
 
+# Usar la variable correcta que definiste en el archivo
+client = OpenAI(api_key=os.getenv("api_key"))
 def cosine_similarity(a, b):
     return np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b))
 
